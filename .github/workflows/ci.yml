@@ -1,0 +1,19 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [ develop ]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: action/checkout@v4
+
+      - name: echo
+        run: echo "CI running"
+
+      - name: list files
+        run: ls -la
